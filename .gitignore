@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Production builds
+dist/
+client/dist/
+server/dist/
+shared/dist/
+
+# Test output
+coverage/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# DynamoDB Local data
+.dynamodb/

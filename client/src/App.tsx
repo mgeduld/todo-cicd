@@ -28,7 +28,7 @@ export default function App() {
   useEffect(() => {
     let cancelled = false;
 
-    async function fetchInitialTodos(): Promise<string> {
+    async function fetchInitialTodos(): Promise<void> {
       try {
         const loadedTodos = await getTodos();
 

@@ -5,13 +5,13 @@
   "type": "module",
   "exports": {
     ".": {
-      "dev": "tsc --watch",
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
   },
   "scripts": {
     "build": "tsc",
+    "dev": "tsc --watch",
     "typecheck": "tsc --noEmit --pretty false"
   }
 }

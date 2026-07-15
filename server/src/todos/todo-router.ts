@@ -72,7 +72,6 @@ export function createTodoRouter(repository: TodoRepository): Router {
 }
 
 function parseCreateTodoInput(value: unknown): CreateTodoInput {
-  console.log("!!!!!!!!!!")
   if (
     typeof value !== "object" ||
     value === null ||
@@ -85,7 +84,6 @@ function parseCreateTodoInput(value: unknown): CreateTodoInput {
   const title = value.title.trim();
 
   if (title.length === 0) {
-    console.log("EMPTY")
     throw new BadRequestError("title must not be empty");
   }
 

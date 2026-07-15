@@ -29,7 +29,6 @@ export function createApp(
       response: express.Response,
       _next: express.NextFunction
     ) => {
-      console.log("****** ", error instanceof BadRequestError)
       if (error instanceof BadRequestError) {
         response.status(400).json({
           error: error.message,
@@ -39,7 +38,6 @@ export function createApp(
       }
 
       console.error(error);
-      console.log("***********")
       response.status(500).json({
         error: "Internal server error",
       });

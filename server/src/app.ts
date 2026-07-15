@@ -1,5 +1,6 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import express from "express";
-
 import { InMemoryTodoRepository } from "./todos/in-memory-todo-repository.js";
 import type { TodoRepository } from "./todos/todo-repository.js";
 import {
@@ -21,6 +22,17 @@ export function createApp(
   });
 
   app.use("/api/todos", createTodoRouter(todoRepository));
+
+  const currentDirectory = path.dirname(
+    fileURLToPath(import.meta.url),
+  );
+
+  const clientDirectory = path.resolve(
+    currentDirectory,
+    "../../client/dist",
+  );
+
+  app.use(express.static(clientDirectory));
 
   app.use(
     (

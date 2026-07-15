@@ -9,7 +9,10 @@
     "build": "tsc",
     "typecheck": "tsc --project tsconfig.test.json --pretty false",
     "lint": "eslint .",
-    "test": "vitest run"
+    "test": "vitest run --exclude '**/dynamodb-todo-repository.test.ts'",
+    "test:integration": "vitest run src/todos/dynamodb-todo-repository.test.ts",
+    "test:all": "vitest run",
+    "db:create": "tsx src/dynamodb/create-table.ts"
   },
   "keywords": [],
   "author": "",
@@ -26,7 +29,10 @@
     "vitest": "^4.1.10"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1087.0",
+    "@aws-sdk/lib-dynamodb": "^3.1087.0",
     "@todo-cicd/shared": "^1.0.0",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1"
   }
 }

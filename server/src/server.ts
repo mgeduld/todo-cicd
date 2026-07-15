@@ -1,26 +1,60 @@
-import { createApp } from "./app.js"
+import { createApp } from "./app.js";
+import { loadConfig } from "./config.js";
+import { createDynamoDbClient } from "./dynamodb/dynamodb-client.js";
+import { DynamoDbTodoRepository } from "./todos/dynamodb-todo-repository.js";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import dotenv from "dotenv";
 
-const DEFAULT_PORT = 3000;
+const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
 
-function getPort(): number {
-  const value = process.env.PORT;
+dotenv.config({
+  path: path.resolve(currentDirectory, "../../.env"),
+});
 
-  if (value === undefined) {
-    return DEFAULT_PORT;
-  }
+const config = loadConfig();
 
-  const port = Number(value);
+console.log({
+  endpoint: config.dynamoDbEndpoint,
+  region: config.awsRegion,
+  tableName: config.dynamoDbTableName,
+});
 
-  if (!Number.isInteger(port) || port < 1 || port > 65_535) {
-    throw new Error(`Invalid PORT value: ${value}`);
-  }
+const dynamoDbClient = createDynamoDbClient({
+  region: config.awsRegion,
+  endpoint: config.dynamoDbEndpoint,
+});
 
-  return port;
+const repository = new DynamoDbTodoRepository(
+  dynamoDbClient,
+  config.dynamoDbTableName,
+);
+
+const app = createApp(repository);
+
+const server = app.listen(config.port, () => {
+  console.log(
+    `Server listening on http://localhost:${config.port}`,
+  );
+});
+
+function shutDown(signal: string): void {
+  console.log(`Received ${signal}; shutting down`);
+
+  server.close((error) => {
+    dynamoDbClient.destroy();
+
+    if (error !== undefined) {
+      console.error("Error while closing server:", error);
+      process.exitCode = 1;
+    }
+  });
 }
 
-const port = getPort();
-const app = createApp();
+process.on("SIGINT", () => {
+  shutDown("SIGINT");
+});
 
-app.listen(port, () => {
-  console.log(`Server listening on http://localhost:${port}`);
+process.on("SIGTERM", () => {
+  shutDown("SIGTERM");
 });

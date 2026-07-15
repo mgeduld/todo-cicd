@@ -51,12 +51,21 @@ jobs:
             -inMemory
 
       - name: Wait for DynamoDB Local
+        shell: bash
         run: |
-          curl \
-            --retry 10 \
-            --retry-delay 1 \
-            --retry-connrefused \
-            http://localhost:8000
+          for attempt in {1..30}; do
+            if curl --silent --output /dev/null http://localhost:8000; then
+              echo "DynamoDB Local is accepting connections"
+              exit 0
+            fi
+
+            echo "Waiting for DynamoDB Local (attempt $attempt/30)..."
+            sleep 1
+          done
+
+          echo "DynamoDB Local did not become ready"
+          docker logs dynamodb-local
+          exit 1
 
       - name: Run DynamoDB integration tests
         run: npm run test:integration --workspace server

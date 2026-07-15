@@ -1,0 +1,17 @@
+{
+  "name": "@todo-cicd/shared",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "dev": "tsc --watch",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit --pretty false"
+  }
+}

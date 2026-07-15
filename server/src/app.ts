@@ -1,6 +1,15 @@
 import express from "express";
 
-export function createApp() {
+import { InMemoryTodoRepository } from "./todos/in-memory-todo-repository.js";
+import type { TodoRepository } from "./todos/todo-repository.js";
+import {
+  BadRequestError,
+  createTodoRouter,
+} from "./todos/todo-router.js";
+
+export function createApp(
+  todoRepository: TodoRepository = new InMemoryTodoRepository(),
+) {
   const app = express();
 
   app.use(express.json());
@@ -10,6 +19,32 @@ export function createApp() {
       status: "ok",
     });
   });
+
+  app.use("/api/todos", createTodoRouter(todoRepository));
+
+  app.use(
+    (
+      error: unknown,
+      _request: express.Request,
+      response: express.Response,
+      _next: express.NextFunction
+    ) => {
+      console.log("****** ", error instanceof BadRequestError)
+      if (error instanceof BadRequestError) {
+        response.status(400).json({
+          error: error.message,
+        });
+
+        return;
+      }
+
+      console.error(error);
+      console.log("***********")
+      response.status(500).json({
+        error: "Internal server error",
+      });
+    },
+  );
 
   return app;
 }

@@ -1,0 +1,27 @@
+{
+  "name": "@todo-cicd/server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit --pretty false",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.1.1",
+    "eslint": "^10.7.0",
+    "tsx": "^4.23.1",
+    "typescript": "^7.0.2",
+    "typescript-eslint": "^8.64.0"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

@@ -163,7 +163,7 @@ export default function App() {
 
         <p>
           A tiny application with a deliberately serious delivery
-          pipeline.
+          pipeline. Automatically deployed through GitHub Actions and Amazon ECS.
         </p>
       </header>
 

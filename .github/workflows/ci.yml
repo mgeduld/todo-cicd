@@ -112,6 +112,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build and push image
+        id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: todo-cicd
@@ -126,4 +127,50 @@ jobs:
 
           docker push "${IMAGE_URI}"
 
+          echo "image-uri=${IMAGE_URI}" >> "$GITHUB_OUTPUT"
           echo "Published ${IMAGE_URI}"
+      - name: Render ECS task definition
+        id: render-task-definition
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: infra/ecs-task-definition.json
+          container-name: todo-cicd
+          image: ${{ steps.build-image.outputs.image-uri }}
+      - name: Deploy ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
+        with:
+          task-definition: ${{ steps.render-task-definition.outputs.task-definition }}
+          service: todo-cicd
+          cluster: todo-cicd
+          wait-for-service-stability: true
+      - name: Verify deployed application
+        shell: bash
+        run: |
+          LOAD_BALANCER_DNS="$(
+            aws elbv2 describe-load-balancers \
+              --names todo-cicd \
+              --region us-east-1 \
+              --query 'LoadBalancers[0].DNSName' \
+              --output text
+          )"
+
+          echo "Testing http://${LOAD_BALANCER_DNS}/health"
+
+          for attempt in {1..20}; do
+            if response="$(
+              curl \
+                --silent \
+                --show-error \
+                --fail \
+                "http://${LOAD_BALANCER_DNS}/health"
+            )"; then
+              echo "Health response: ${response}"
+              exit 0
+            fi
+
+            echo "Health check attempt ${attempt}/20 failed; retrying..."
+            sleep 3
+          done
+
+          echo "Deployed application did not pass its health check"
+          exit 1

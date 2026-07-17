@@ -1,0 +1,18 @@
+{
+    "repositories": [
+        {
+            "repositoryArn": "arn:aws:ecr:us-east-1:367396826304:repository/todo-cicd",
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "repositoryUri": "367396826304.dkr.ecr.us-east-1.amazonaws.com/todo-cicd",
+            "createdAt": "2026-07-16T11:52:55.608000-04:00",
+            "imageTagMutability": "MUTABLE",
+            "imageScanningConfiguration": {
+                "scanOnPush": false
+            },
+            "encryptionConfiguration": {
+                "encryptionType": "AES256"
+            }
+        }
+    ]
+}

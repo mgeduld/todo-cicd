@@ -1,0 +1,32 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "TodoCicdEcrPublisher",
+        "RoleId": "AROAVLCUOVTAIQ4DHTO27",
+        "Arn": "arn:aws:iam::367396826304:role/TodoCicdEcrPublisher",
+        "CreateDate": "2026-07-16T16:14:52+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Federated": "arn:aws:iam::367396826304:oidc-provider/token.actions.githubusercontent.com"
+                    },
+                    "Action": "sts:AssumeRoleWithWebIdentity",
+                    "Condition": {
+                        "StringEquals": {
+                            "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+                            "token.actions.githubusercontent.com:sub": "repo:mgeduld@440971/todo-cicd@1301976725:environment:production"
+                        }
+                    }
+                }
+            ]
+        },
+        "MaxSessionDuration": 3600,
+        "RoleLastUsed": {
+            "LastUsedDate": "2026-07-17T14:03:55+00:00",
+            "Region": "us-east-1"
+        }
+    }
+}

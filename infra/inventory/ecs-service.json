@@ -1,0 +1,403 @@
+{
+    "services": [
+        {
+            "serviceArn": "arn:aws:ecs:us-east-1:367396826304:service/todo-cicd/todo-cicd",
+            "serviceName": "todo-cicd",
+            "clusterArn": "arn:aws:ecs:us-east-1:367396826304:cluster/todo-cicd",
+            "loadBalancers": [
+                {
+                    "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875",
+                    "containerName": "todo-cicd",
+                    "containerPort": 3000
+                }
+            ],
+            "serviceRegistries": [],
+            "status": "ACTIVE",
+            "desiredCount": 1,
+            "runningCount": 1,
+            "pendingCount": 0,
+            "launchType": "FARGATE",
+            "platformVersion": "1.4.0",
+            "platformFamily": "Linux",
+            "taskDefinition": "arn:aws:ecs:us-east-1:367396826304:task-definition/todo-cicd:7",
+            "deploymentConfiguration": {
+                "deploymentCircuitBreaker": {
+                    "enable": true,
+                    "rollback": true,
+                    "resetOnHealthyTask": true,
+                    "thresholdConfiguration": {
+                        "type": "BOUNDED_PERCENT",
+                        "value": 50
+                    }
+                },
+                "maximumPercent": 200,
+                "minimumHealthyPercent": 100,
+                "strategy": "ROLLING",
+                "bakeTimeInMinutes": 0
+            },
+            "deployments": [
+                {
+                    "id": "ecs-svc/1219470557286720252",
+                    "status": "PRIMARY",
+                    "taskDefinition": "arn:aws:ecs:us-east-1:367396826304:task-definition/todo-cicd:7",
+                    "desiredCount": 1,
+                    "pendingCount": 0,
+                    "runningCount": 1,
+                    "failedTasks": 0,
+                    "createdAt": "2026-07-17T10:00:13.662000-04:00",
+                    "updatedAt": "2026-07-17T10:02:50.305000-04:00",
+                    "launchType": "FARGATE",
+                    "platformVersion": "1.4.0",
+                    "platformFamily": "Linux",
+                    "networkConfiguration": {
+                        "awsvpcConfiguration": {
+                            "subnets": [
+                                "subnet-009810e77cd681358",
+                                "subnet-04a332beeccdcb2c2"
+                            ],
+                            "securityGroups": [
+                                "sg-06b42210fc8cc458e"
+                            ],
+                            "assignPublicIp": "ENABLED"
+                        }
+                    },
+                    "rolloutState": "COMPLETED",
+                    "rolloutStateReason": "ECS deployment ecs-svc/1219470557286720252 completed."
+                }
+            ],
+            "roleArn": "arn:aws:iam::367396826304:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "events": [
+                {
+                    "id": "d531c3d3-aee9-4444-850e-49ec5aadde1f",
+                    "createdAt": "2026-07-17T10:02:50.310000-04:00",
+                    "message": "(service todo-cicd) has reached a steady state."
+                },
+                {
+                    "id": "4a947e3b-ecc1-458b-83be-7db549d52426",
+                    "createdAt": "2026-07-17T10:02:50.309000-04:00",
+                    "message": "(service todo-cicd) (deployment ecs-svc/1219470557286720252) deployment completed."
+                },
+                {
+                    "id": "9ed2bb67-af4e-4f9f-9a31-18e481fca529",
+                    "createdAt": "2026-07-17T10:01:49.088000-04:00",
+                    "message": "(service todo-cicd, taskSet ecs-svc/3937837413129022094) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "09cb4cf7-9978-44bd-92af-76302f1f3cc1",
+                    "createdAt": "2026-07-17T10:01:49.081000-04:00",
+                    "message": "(service todo-cicd) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "58759dfb-792e-42e8-a61a-bc0199c2b343",
+                    "createdAt": "2026-07-17T10:01:40.053000-04:00",
+                    "message": "(service todo-cicd) has stopped 1 running tasks: (task d5e985121b5c41d884965aed72a49a99)."
+                },
+                {
+                    "id": "07507888-2728-44f6-ad21-b6f9c6bef9ba",
+                    "createdAt": "2026-07-17T10:00:59.797000-04:00",
+                    "message": "(service todo-cicd) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "2e92faba-3f4f-46f1-94a8-846d987e1108",
+                    "createdAt": "2026-07-17T10:00:29.960000-04:00",
+                    "message": "(service todo-cicd) has started 1 tasks: (task d61c5e94b772469986cfcfaca6aae2de)."
+                },
+                {
+                    "id": "1f3edcd9-0d65-42b3-8dbf-220da3a656a9",
+                    "createdAt": "2026-07-17T09:54:38.154000-04:00",
+                    "message": "(service todo-cicd) has reached a steady state."
+                },
+                {
+                    "id": "f26865e6-6814-49d6-8fc3-a47074d4985a",
+                    "createdAt": "2026-07-17T09:54:38.153000-04:00",
+                    "message": "(service todo-cicd) (deployment ecs-svc/3937837413129022094) deployment completed."
+                },
+                {
+                    "id": "a2d044b1-9226-46fd-84d4-0fc9caf78635",
+                    "createdAt": "2026-07-17T09:54:02.846000-04:00",
+                    "message": "(service todo-cicd) rolling back to deployment ecs-svc/3937837413129022094."
+                },
+                {
+                    "id": "6594431e-bdbc-4c11-9655-8ce62ad1ce22",
+                    "createdAt": "2026-07-17T09:54:02.845000-04:00",
+                    "message": "(service todo-cicd) (deployment ecs-svc/4241855119135723916) deployment failed: tasks failed to start."
+                },
+                {
+                    "id": "fb45f7a2-14e4-48d3-b1b0-5a0123652f91",
+                    "createdAt": "2026-07-17T09:52:47.512000-04:00",
+                    "message": "(service todo-cicd, taskSet ecs-svc/4241855119135723916) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "7992cc37-32ab-46ce-8f88-8672e349da5a",
+                    "createdAt": "2026-07-17T09:52:47.506000-04:00",
+                    "message": "(service todo-cicd) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "9b0dbfc0-0b54-4bf3-b2ea-3be9a3401971",
+                    "createdAt": "2026-07-17T09:52:37.711000-04:00",
+                    "message": "(service todo-cicd) has stopped 1 running tasks: (task cc18b9f153d64b1ab0f3768a2ea9024f)."
+                },
+                {
+                    "id": "aba2d6bb-4ca3-478c-872f-80893f751bad",
+                    "createdAt": "2026-07-17T09:52:37.710000-04:00",
+                    "message": "(service todo-cicd) (task cc18b9f153d64b1ab0f3768a2ea9024f) failed container health checks."
+                },
+                {
+                    "id": "bd3388c7-1800-446a-91c1-75e3b55bd1cc",
+                    "createdAt": "2026-07-17T09:50:57.488000-04:00",
+                    "message": "(service todo-cicd) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "6046239a-0c94-4de0-a66c-7a30ba3cf643",
+                    "createdAt": "2026-07-17T09:50:28.233000-04:00",
+                    "message": "(service todo-cicd) has started 1 tasks: (task cc18b9f153d64b1ab0f3768a2ea9024f)."
+                },
+                {
+                    "id": "d219eafd-e7dc-4790-8b74-7ce5a9add2e2",
+                    "createdAt": "2026-07-17T09:44:36.228000-04:00",
+                    "message": "(service todo-cicd, taskSet ecs-svc/4241855119135723916) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "5a161f8d-a7e9-4466-aa03-8297d3b8f685",
+                    "createdAt": "2026-07-17T09:44:36.224000-04:00",
+                    "message": "(service todo-cicd) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "d4e6159f-7959-42c0-bb28-990908ce5937",
+                    "createdAt": "2026-07-17T09:44:25.732000-04:00",
+                    "message": "(service todo-cicd) has stopped 1 running tasks: (task 07cd1cc09a064a94b2ac0f80eaefab21)."
+                },
+                {
+                    "id": "d0a3ab4b-f273-4828-8c10-32efd7067e91",
+                    "createdAt": "2026-07-17T09:44:25.731000-04:00",
+                    "message": "(service todo-cicd) (task 07cd1cc09a064a94b2ac0f80eaefab21) failed container health checks."
+                },
+                {
+                    "id": "7255d503-3d3b-4d23-9a33-a0c7823d42e2",
+                    "createdAt": "2026-07-17T09:42:35.846000-04:00",
+                    "message": "(service todo-cicd) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "6598c1e0-6072-462a-aa55-b6121ad977da",
+                    "createdAt": "2026-07-17T09:41:56.100000-04:00",
+                    "message": "(service todo-cicd) has started 1 tasks: (task 07cd1cc09a064a94b2ac0f80eaefab21)."
+                },
+                {
+                    "id": "01e209dc-65bb-4b81-9909-50be49a5dc5d",
+                    "createdAt": "2026-07-17T09:36:03.403000-04:00",
+                    "message": "(service todo-cicd, taskSet ecs-svc/4241855119135723916) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "fea05a8b-f9df-4533-823a-b3ae99535359",
+                    "createdAt": "2026-07-17T09:36:03.398000-04:00",
+                    "message": "(service todo-cicd) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "c6b1d724-5c86-464b-97af-c69c9a706790",
+                    "createdAt": "2026-07-17T09:35:53.833000-04:00",
+                    "message": "(service todo-cicd) has stopped 1 running tasks: (task ed39021a4e7a457c96a4544c653c4998)."
+                },
+                {
+                    "id": "34708389-3949-44fb-84ea-db51b06b8fee",
+                    "createdAt": "2026-07-17T09:35:53.832000-04:00",
+                    "message": "(service todo-cicd) (task ed39021a4e7a457c96a4544c653c4998) failed container health checks."
+                },
+                {
+                    "id": "42cb2b29-2658-4f74-95ad-720b0890bc40",
+                    "createdAt": "2026-07-17T09:34:04.090000-04:00",
+                    "message": "(service todo-cicd) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "11d88053-5a08-4fa8-b3b0-2c47b2be37fc",
+                    "createdAt": "2026-07-17T09:33:44.454000-04:00",
+                    "message": "(service todo-cicd) has started 1 tasks: (task ed39021a4e7a457c96a4544c653c4998)."
+                },
+                {
+                    "id": "5cc48fac-425e-417c-9af5-5a2a13936ae3",
+                    "createdAt": "2026-07-17T09:19:29.863000-04:00",
+                    "message": "(service todo-cicd) has reached a steady state."
+                },
+                {
+                    "id": "7ba23011-62da-47b0-a75a-ccfbc7447ff8",
+                    "createdAt": "2026-07-17T09:19:29.862000-04:00",
+                    "message": "(service todo-cicd) (deployment ecs-svc/3937837413129022094) deployment completed."
+                },
+                {
+                    "id": "033d9c06-b2f4-4098-86ce-30877cc5a573",
+                    "createdAt": "2026-07-17T09:18:29.616000-04:00",
+                    "message": "(service todo-cicd, taskSet ecs-svc/0856828628428155916) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "1535af3e-4b8f-4950-8d65-d5f690de2401",
+                    "createdAt": "2026-07-17T09:18:29.611000-04:00",
+                    "message": "(service todo-cicd) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "ffa4bdd2-ce51-427c-ac00-b9fb65651c75",
+                    "createdAt": "2026-07-17T09:18:20.110000-04:00",
+                    "message": "(service todo-cicd) has stopped 1 running tasks: (task ecb5595992964919a36518b3e6bc1f9e)."
+                },
+                {
+                    "id": "eed39254-da66-4d98-92fb-7148bffc81e7",
+                    "createdAt": "2026-07-17T09:17:30.959000-04:00",
+                    "message": "(service todo-cicd) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "dc8b21ad-3db1-4d9b-a213-f5451b7463ff",
+                    "createdAt": "2026-07-17T09:17:11.100000-04:00",
+                    "message": "(service todo-cicd) has started 1 tasks: (task d5e985121b5c41d884965aed72a49a99)."
+                },
+                {
+                    "id": "a7fdbd1c-1f72-42e7-a8d8-3c1356ba7353",
+                    "createdAt": "2026-07-17T08:48:44.599000-04:00",
+                    "message": "(service todo-cicd) has reached a steady state."
+                },
+                {
+                    "id": "e2a9c257-3631-40fb-888c-fe2ec592bb75",
+                    "createdAt": "2026-07-17T08:48:44.598000-04:00",
+                    "message": "(service todo-cicd) (deployment ecs-svc/0856828628428155916) deployment completed."
+                },
+                {
+                    "id": "aadc12dd-393a-45cf-81d0-0bf26c5654b4",
+                    "createdAt": "2026-07-17T08:47:44.359000-04:00",
+                    "message": "(service todo-cicd, taskSet ecs-svc/2819095427214403459) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "57aa9c87-6e92-4076-a292-27f28c60b522",
+                    "createdAt": "2026-07-17T08:47:44.351000-04:00",
+                    "message": "(service todo-cicd) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "942af80b-2fa6-4c81-bdc3-bd5d9fb1d3fe",
+                    "createdAt": "2026-07-17T08:47:34.309000-04:00",
+                    "message": "(service todo-cicd) has stopped 1 running tasks: (task 50fef8210a02404c965e71b4f8a5c70d)."
+                },
+                {
+                    "id": "7dd14d88-b93a-43f4-85ad-4d353b7d77ae",
+                    "createdAt": "2026-07-17T08:46:54.723000-04:00",
+                    "message": "(service todo-cicd) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "b18c4837-9822-4e9c-b709-87674d68620a",
+                    "createdAt": "2026-07-17T08:46:24.848000-04:00",
+                    "message": "(service todo-cicd) has started 1 tasks: (task ecb5595992964919a36518b3e6bc1f9e)."
+                },
+                {
+                    "id": "150f8072-0316-416d-aeae-1cb0b9c737b5",
+                    "createdAt": "2026-07-17T08:22:08.113000-04:00",
+                    "message": "(service todo-cicd) has reached a steady state."
+                },
+                {
+                    "id": "1e9c039d-7c0d-4b42-aa50-da4b12524162",
+                    "createdAt": "2026-07-17T08:22:08.112000-04:00",
+                    "message": "(service todo-cicd) (deployment ecs-svc/2819095427214403459) deployment completed."
+                },
+                {
+                    "id": "dc956d2e-78a0-4fad-a01e-986ba544d91b",
+                    "createdAt": "2026-07-17T08:20:57.827000-04:00",
+                    "message": "(service todo-cicd, taskSet ecs-svc/3580465531084392060) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "0a03b68a-4969-49ce-b63b-379f05fbbc98",
+                    "createdAt": "2026-07-17T08:20:57.822000-04:00",
+                    "message": "(service todo-cicd) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "b512d728-1b6f-4186-b75d-d29c89ca5b3d",
+                    "createdAt": "2026-07-17T08:20:48.728000-04:00",
+                    "message": "(service todo-cicd) has stopped 1 running tasks: (task 442d4caf325248f6b885b8264577d3a5)."
+                },
+                {
+                    "id": "5a5c5e02-8511-4dd2-a7a5-d90d534cb3a4",
+                    "createdAt": "2026-07-17T08:20:08.378000-04:00",
+                    "message": "(service todo-cicd) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "83ae4d96-3377-42b0-886e-3b2dc966ba71",
+                    "createdAt": "2026-07-17T08:19:39.384000-04:00",
+                    "message": "(service todo-cicd) has started 1 tasks: (task 50fef8210a02404c965e71b4f8a5c70d)."
+                },
+                {
+                    "id": "a259e31d-af4c-475d-b529-2b34a6e3cc25",
+                    "createdAt": "2026-07-17T08:02:24.606000-04:00",
+                    "message": "(service todo-cicd) has reached a steady state."
+                },
+                {
+                    "id": "0edb40b1-be2c-4bc3-9137-bc014dcfa25b",
+                    "createdAt": "2026-07-17T08:01:45.894000-04:00",
+                    "message": "(service todo-cicd) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "28bda4d2-d9db-41ff-a5df-4a58c7a600e7",
+                    "createdAt": "2026-07-17T08:00:37.804000-04:00",
+                    "message": "(service todo-cicd) has started 1 tasks: (task 442d4caf325248f6b885b8264577d3a5)."
+                },
+                {
+                    "id": "82896ef7-c6a1-4eb1-8f26-bbde9b58b3b5",
+                    "createdAt": "2026-07-17T08:00:36.752000-04:00",
+                    "message": "(service todo-cicd, taskSet ecs-svc/3580465531084392060) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "c5fd4f41-2f77-4e12-be30-abb272a7d13a",
+                    "createdAt": "2026-07-17T08:00:36.746000-04:00",
+                    "message": "(service todo-cicd) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "ea847ffe-9767-40b8-a826-36e27babce9c",
+                    "createdAt": "2026-07-17T07:57:33.316000-04:00",
+                    "message": "(service todo-cicd) has reached a steady state."
+                },
+                {
+                    "id": "a960c329-275b-4328-80e9-7df329c77b00",
+                    "createdAt": "2026-07-17T07:57:33.315000-04:00",
+                    "message": "(service todo-cicd) (deployment ecs-svc/3580465531084392060) deployment completed."
+                },
+                {
+                    "id": "9429c89b-3666-4b0d-adf9-8d76e2582355",
+                    "createdAt": "2026-07-17T07:56:53.979000-04:00",
+                    "message": "(service todo-cicd) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875)"
+                },
+                {
+                    "id": "4fde6497-b2dc-4965-bb26-dc4d0ad31d33",
+                    "createdAt": "2026-07-17T07:56:23.992000-04:00",
+                    "message": "(service todo-cicd) has started 1 tasks: (task ffccbb95286b4f66be19ab395363914f)."
+                }
+            ],
+            "createdAt": "2026-07-17T07:56:03.440000-04:00",
+            "currentServiceRevisions": [
+                {
+                    "arn": "arn:aws:ecs:us-east-1:367396826304:service-revision/todo-cicd/todo-cicd/1219470557286720252",
+                    "requestedTaskCount": 1,
+                    "runningTaskCount": 1,
+                    "pendingTaskCount": 0
+                }
+            ],
+            "placementConstraints": [],
+            "placementStrategy": [],
+            "networkConfiguration": {
+                "awsvpcConfiguration": {
+                    "subnets": [
+                        "subnet-009810e77cd681358",
+                        "subnet-04a332beeccdcb2c2"
+                    ],
+                    "securityGroups": [
+                        "sg-06b42210fc8cc458e"
+                    ],
+                    "assignPublicIp": "ENABLED"
+                }
+            },
+            "healthCheckGracePeriodSeconds": 60,
+            "schedulingStrategy": "REPLICA",
+            "deploymentController": {
+                "type": "ECS"
+            },
+            "createdBy": "arn:aws:iam::367396826304:user/marcus-admin",
+            "enableECSManagedTags": false,
+            "propagateTags": "NONE",
+            "enableExecuteCommand": false,
+            "availabilityZoneRebalancing": "ENABLED",
+            "resourceManagementType": "CUSTOMER"
+        }
+    ],
+    "failures": []
+}

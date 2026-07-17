@@ -1,0 +1,77 @@
+{
+    "SecurityGroups": [
+        {
+            "GroupId": "sg-0454e81826a039f3c",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-002f50e8f4f2279af",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:367396826304:security-group/sg-0454e81826a039f3c",
+            "OwnerId": "367396826304",
+            "GroupName": "todo-cicd-alb",
+            "Description": "Public HTTP access to Todo load balancer",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 80,
+                    "ToPort": 80,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-06b42210fc8cc458e",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-002f50e8f4f2279af",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:367396826304:security-group/sg-06b42210fc8cc458e",
+            "OwnerId": "367396826304",
+            "GroupName": "todo-cicd-tasks",
+            "Description": "Allow Todo traffic only from its load balancer",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 3000,
+                    "ToPort": 3000,
+                    "UserIdGroupPairs": [
+                        {
+                            "UserId": "367396826304",
+                            "GroupId": "sg-0454e81826a039f3c"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "logGroups": [
+        {
+            "logGroupName": "/ecs/todo-cicd",
+            "creationTime": 1784229616390,
+            "retentionInDays": 7,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:367396826304:log-group:/ecs/todo-cicd:*",
+            "storedBytes": 542,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:367396826304:log-group:/ecs/todo-cicd",
+            "deletionProtectionEnabled": false,
+            "bearerTokenAuthenticationEnabled": false
+        }
+    ]
+}

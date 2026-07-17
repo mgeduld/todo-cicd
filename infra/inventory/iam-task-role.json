@@ -1,0 +1,26 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "TodoCicdTaskRole",
+        "RoleId": "AROAVLCUOVTAEWFUAVWU7",
+        "Arn": "arn:aws:iam::367396826304:role/TodoCicdTaskRole",
+        "CreateDate": "2026-07-16T19:14:03+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "ecs-tasks.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        },
+        "MaxSessionDuration": 3600,
+        "RoleLastUsed": {
+            "LastUsedDate": "2026-07-17T12:24:48+00:00",
+            "Region": "us-east-1"
+        }
+    }
+}

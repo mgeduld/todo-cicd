@@ -1,0 +1,59 @@
+{
+    "RoleName": "TodoCicdEcrPublisher",
+    "PolicyName": "PushTodoCicdImages",
+    "PolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "GetEcrAuthorizationToken",
+                "Effect": "Allow",
+                "Action": "ecr:GetAuthorizationToken",
+                "Resource": "*"
+            },
+            {
+                "Sid": "PushTodoCicdImages",
+                "Effect": "Allow",
+                "Action": [
+                    "ecr:BatchCheckLayerAvailability",
+                    "ecr:BatchGetImage",
+                    "ecr:CompleteLayerUpload",
+                    "ecr:InitiateLayerUpload",
+                    "ecr:PutImage",
+                    "ecr:UploadLayerPart"
+                ],
+                "Resource": "arn:aws:ecr:us-east-1:367396826304:repository/todo-cicd"
+            },
+            {
+                "Sid": "DeployTodoCicdService",
+                "Effect": "Allow",
+                "Action": [
+                    "ecs:DescribeServices",
+                    "ecs:DescribeTaskDefinition",
+                    "ecs:RegisterTaskDefinition",
+                    "ecs:UpdateService"
+                ],
+                "Resource": "*"
+            },
+            {
+                "Sid": "PassEcsRoles",
+                "Effect": "Allow",
+                "Action": "iam:PassRole",
+                "Resource": [
+                    "arn:aws:iam::367396826304:role/TodoCicdTaskRole",
+                    "arn:aws:iam::367396826304:role/TodoCicdTaskExecutionRole"
+                ],
+                "Condition": {
+                    "StringEquals": {
+                        "iam:PassedToService": "ecs-tasks.amazonaws.com"
+                    }
+                }
+            },
+            {
+                "Sid": "FindTodoLoadBalancer",
+                "Effect": "Allow",
+                "Action": "elasticloadbalancing:DescribeLoadBalancers",
+                "Resource": "*"
+            }
+        ]
+    }
+}

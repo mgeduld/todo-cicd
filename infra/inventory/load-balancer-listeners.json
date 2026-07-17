@@ -1,0 +1,27 @@
+{
+    "Listeners": [
+        {
+            "ListenerArn": "arn:aws:elasticloadbalancing:us-east-1:367396826304:listener/app/todo-cicd/f8f146571e4ce6e0/25d109859d459e9f",
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-1:367396826304:loadbalancer/app/todo-cicd/f8f146571e4ce6e0",
+            "Port": 80,
+            "Protocol": "HTTP",
+            "DefaultActions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875",
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:367396826304:targetgroup/todo-cicd/1ba56792441ea875",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

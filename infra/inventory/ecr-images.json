@@ -1,0 +1,150 @@
+{
+    "imageDetails": [
+        {
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "imageDigest": "sha256:649adcb4211a67fc9acec4d0fbf1d0ee4c2f93d7b2176c04f98a570e51752f6d",
+            "imageSizeInBytes": 83868760,
+            "imagePushedAt": "2026-07-16T11:53:18.382000-04:00",
+            "imageManifestMediaType": "application/vnd.oci.image.manifest.v1+json",
+            "artifactMediaType": "application/vnd.oci.image.config.v1+json",
+            "lastRecordedPullTime": "2026-07-16T11:53:39.773000-04:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "imageDigest": "sha256:c4eb04b907b943141b8078eb955d5eb597ec400747bffc012f171d16d96d31bb",
+            "imageSizeInBytes": 1823,
+            "imagePushedAt": "2026-07-16T11:53:18.399000-04:00",
+            "imageManifestMediaType": "application/vnd.oci.image.manifest.v1+json",
+            "artifactMediaType": "application/vnd.oci.image.config.v1+json",
+            "lastRecordedPullTime": "2026-07-16T11:53:39.807000-04:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "imageDigest": "sha256:5332bcf31920e471cfbcf61c576ae12bfccee9d827e28977fe9227e7c8f0895d",
+            "imageTags": [
+                "f20205eb5fdbda2b8b01acfab6caee856dd31622"
+            ],
+            "imageSizeInBytes": 84777476,
+            "imagePushedAt": "2026-07-17T09:16:51.705000-04:00",
+            "imageManifestMediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "artifactMediaType": "application/vnd.docker.container.image.v1+json",
+            "lastRecordedPullTime": "2026-07-17T09:17:21.123000-04:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "imageDigest": "sha256:69450b52eb26e08da9d5ddffe0d043e51235bcd969188343d7b986485ca1b05d",
+            "imageTags": [
+                "275e622b169fd1cad36357838322c0989fd7ae62"
+            ],
+            "imageSizeInBytes": 84777130,
+            "imagePushedAt": "2026-07-17T09:33:25.256000-04:00",
+            "imageManifestMediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "artifactMediaType": "application/vnd.docker.container.image.v1+json",
+            "lastRecordedPullTime": "2026-07-17T09:33:54.649000-04:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "imageDigest": "sha256:7e6568f06e2876462159c71f4070e9b529efd58f7bc8d2abb7818877eaa6336c",
+            "imageTags": [
+                "71dbdf6dff8a38a1a6258774c6ed3ad204f9d0d6"
+            ],
+            "imageSizeInBytes": 84776853,
+            "imagePushedAt": "2026-07-16T12:30:20.708000-04:00",
+            "imageManifestMediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "artifactMediaType": "application/vnd.docker.container.image.v1+json",
+            "lastRecordedPullTime": "2026-07-17T07:56:35.981000-04:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "imageDigest": "sha256:b427be2143323953d3a33871613bb59b514af3e34241b9a31c86880bc32c18e8",
+            "imageTags": [
+                "cb480d34c4f1",
+                "manual-1"
+            ],
+            "imageSizeInBytes": 83868760,
+            "imagePushedAt": "2026-07-16T11:53:18.761000-04:00",
+            "imageManifestMediaType": "application/vnd.oci.image.index.v1+json",
+            "lastRecordedPullTime": "2026-07-16T11:56:01.860000-04:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "imageDigest": "sha256:c68032c18a661aa94980e8bbae8b4476814f556162df35486f5f678ced93c73d",
+            "imageTags": [
+                "b1b07847af08d5d61995e3d979d73391c3f9b261"
+            ],
+            "imageSizeInBytes": 84776767,
+            "imagePushedAt": "2026-07-16T15:43:56.478000-04:00",
+            "imageManifestMediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "artifactMediaType": "application/vnd.docker.container.image.v1+json",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "imageDigest": "sha256:d1ed91ed849597202d7ce2f67c3532cc3c20a37d70e5d6c86f510868aa695c54",
+            "imageTags": [
+                "1b1a6dba2bfd7f2e5ffd3a3665d62aa865aa4494"
+            ],
+            "imageSizeInBytes": 84776983,
+            "imagePushedAt": "2026-07-17T08:46:03.661000-04:00",
+            "imageManifestMediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "artifactMediaType": "application/vnd.docker.container.image.v1+json",
+            "lastRecordedPullTime": "2026-07-17T08:46:36.114000-04:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "imageDigest": "sha256:1726f735a0738ae9350ba15aa7fe66e7859c75bcbf0c5c97e2fba7609f5da48f",
+            "imageTags": [
+                "7756eaa46155dd02d727378d889489effc553657"
+            ],
+            "imageSizeInBytes": 84777359,
+            "imagePushedAt": "2026-07-17T08:19:23.351000-04:00",
+            "imageManifestMediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "artifactMediaType": "application/vnd.docker.container.image.v1+json",
+            "lastRecordedPullTime": "2026-07-17T08:19:49.502000-04:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "imageDigest": "sha256:253e192d96d4134670107b0977631d8085a14c96141dce8bf2c01e6b7e39dc1d",
+            "imageTags": [
+                "e15480c002e030bb45518e7b2656d70386d8a65b"
+            ],
+            "imageSizeInBytes": 84777416,
+            "imagePushedAt": "2026-07-17T09:26:50.049000-04:00",
+            "imageManifestMediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "artifactMediaType": "application/vnd.docker.container.image.v1+json",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "367396826304",
+            "repositoryName": "todo-cicd",
+            "imageDigest": "sha256:b42f77b1c53fbc6db60e06fdd9172b00e52f6c0a3dc0a8379a5c344dc6303018",
+            "imageTags": [
+                "724a52fe27fab9635d2c985dd1b9a7173dfb05ac"
+            ],
+            "imageSizeInBytes": 84776968,
+            "imagePushedAt": "2026-07-17T10:00:12.378000-04:00",
+            "imageManifestMediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "artifactMediaType": "application/vnd.docker.container.image.v1+json",
+            "lastRecordedPullTime": "2026-07-17T10:00:45.044000-04:00",
+            "imageStatus": "ACTIVE"
+        }
+    ]
+}

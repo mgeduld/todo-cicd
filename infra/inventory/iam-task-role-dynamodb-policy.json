@@ -1,0 +1,20 @@
+{
+    "RoleName": "TodoCicdTaskRole",
+    "PolicyName": "UseTodoCicdDynamoDbTable",
+    "PolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "UseTodoTable",
+                "Effect": "Allow",
+                "Action": [
+                    "dynamodb:Scan",
+                    "dynamodb:PutItem",
+                    "dynamodb:UpdateItem",
+                    "dynamodb:DeleteItem"
+                ],
+                "Resource": "arn:aws:dynamodb:us-east-1:367396826304:table/todo-cicd-production"
+            }
+        ]
+    }
+}

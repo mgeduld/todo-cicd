@@ -1,0 +1,20 @@
+{
+    "TargetHealthDescriptions": [
+        {
+            "Target": {
+                "Id": "172.31.14.63",
+                "Port": 3000,
+                "AvailabilityZone": "us-east-1a"
+            },
+            "HealthCheckPort": "3000",
+            "TargetHealth": {
+                "State": "healthy"
+            },
+            "AdministrativeOverride": {
+                "State": "no_override",
+                "Reason": "AdministrativeOverride.NoOverride",
+                "Description": "No override is currently active on target"
+            }
+        }
+    ]
+}

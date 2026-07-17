@@ -1,0 +1,116 @@
+{
+    "taskDefinition": {
+        "taskDefinitionArn": "arn:aws:ecs:us-east-1:367396826304:task-definition/todo-cicd:7",
+        "containerDefinitions": [
+            {
+                "name": "todo-cicd",
+                "image": "367396826304.dkr.ecr.us-east-1.amazonaws.com/todo-cicd:724a52fe27fab9635d2c985dd1b9a7173dfb05ac",
+                "cpu": 0,
+                "portMappings": [
+                    {
+                        "containerPort": 3000,
+                        "hostPort": 3000,
+                        "protocol": "tcp"
+                    }
+                ],
+                "essential": true,
+                "environment": [
+                    {
+                        "name": "DYNAMODB_TABLE_NAME",
+                        "value": "todo-cicd-production"
+                    },
+                    {
+                        "name": "NODE_ENV",
+                        "value": "production"
+                    },
+                    {
+                        "name": "AWS_REGION",
+                        "value": "us-east-1"
+                    },
+                    {
+                        "name": "PORT",
+                        "value": "3000"
+                    }
+                ],
+                "mountPoints": [],
+                "volumesFrom": [],
+                "logConfiguration": {
+                    "logDriver": "awslogs",
+                    "options": {
+                        "awslogs-group": "/ecs/todo-cicd",
+                        "awslogs-region": "us-east-1",
+                        "awslogs-stream-prefix": "app"
+                    }
+                },
+                "healthCheck": {
+                    "command": [
+                        "CMD-SHELL",
+                        "node -e \"fetch('http://127.0.0.1:3000/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))\""
+                    ],
+                    "interval": 30,
+                    "timeout": 5,
+                    "retries": 3,
+                    "startPeriod": 10
+                },
+                "systemControls": []
+            }
+        ],
+        "family": "todo-cicd",
+        "taskRoleArn": "arn:aws:iam::367396826304:role/TodoCicdTaskRole",
+        "executionRoleArn": "arn:aws:iam::367396826304:role/TodoCicdTaskExecutionRole",
+        "networkMode": "awsvpc",
+        "revision": 7,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+            {
+                "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+            },
+            {
+                "name": "ecs.capability.execution-role-awslogs"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.ecr-auth"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.task-iam-role"
+            },
+            {
+                "name": "ecs.capability.container-health-check"
+            },
+            {
+                "name": "ecs.capability.execution-role-ecr-pull"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+            },
+            {
+                "name": "ecs.capability.task-eni"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+            }
+        ],
+        "placementConstraints": [],
+        "compatibilities": [
+            "EC2",
+            "MANAGED_INSTANCES",
+            "FARGATE"
+        ],
+        "runtimePlatform": {
+            "cpuArchitecture": "X86_64",
+            "operatingSystemFamily": "LINUX"
+        },
+        "requiresCompatibilities": [
+            "FARGATE"
+        ],
+        "cpu": "256",
+        "memory": "512",
+        "registeredAt": "2026-07-17T10:00:13.083000-04:00",
+        "registeredBy": "arn:aws:sts::367396826304:assumed-role/TodoCicdEcrPublisher/todo-cicd-29586043122"
+    },
+    "tags": []
+}

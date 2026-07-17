@@ -19,8 +19,8 @@
       "essential": true,
       "portMappings": [
         {
-          "containerPort": 3001,
-          "hostPort": 3001,
+          "containerPort": 3000,
+          "hostPort": 3000,
           "protocol": "tcp"
         }
       ],
@@ -53,7 +53,7 @@
       "healthCheck": {
         "command": [
           "CMD-SHELL",
-          "node -e \"fetch('http://127.0.0.1:3000/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))\""
+          "node -e \"fetch('http://127.0.0.1:3000/health-broken').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))\""
         ],
         "interval": 30,
         "timeout": 5,
